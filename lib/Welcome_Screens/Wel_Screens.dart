@@ -12,9 +12,10 @@ class Wel_Screen extends StatefulWidget {
 class _Wel_ScreenState extends State<Wel_Screen> {
     @override
     Widget build(BuildContext context) {
-    return Stack(
-        children: [
-    Container(
+    return Scaffold(
+      body: Stack(
+    children:<Widget>[
+      Container(
     decoration: BoxDecoration(
     image: DecorationImage(
         image: AssetImage("assets/images/ls.png"), // <-- BACKGROUND IMAGE
@@ -22,11 +23,10 @@ class _Wel_ScreenState extends State<Wel_Screen> {
     ),
     ),
     ),
-    Scaffold(
-        backgroundColor: Colors.transparent, // <-- SCAFFOLD WITH TRANSPARENT BG
-        body  : SingleChildScrollView(
-        child : Container(
-        margin: new EdgeInsets.only(top: 700, left: 170),
+      Center(  //body  : Scaffold(
+      //child:SingleChildScrollView(
+       child:Container(
+        margin: new EdgeInsets.only(top: 610, right: 140),
         child : Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: SlideAction(
@@ -53,8 +53,9 @@ class _Wel_ScreenState extends State<Wel_Screen> {
             ),
            ),
           ),
-         ),
+
         ]
+      ),
       );
     }
 }
