@@ -1,11 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:zonefive/Authentication_Pages/AdminLogin.dart';
+import 'package:zonefive/Authentication_Pages/Login.dart';
 import 'package:zonefive/Authentication_Pages/SignUp.dart';
-import 'package:zonefive/Dashboard_Screens/Dashboard.dart';
 
 
-class Login extends StatelessWidget{
+class AdminLogin extends StatelessWidget{
   bool obsecureText = true;
   static String routeName ="/LoginScreen";
 
@@ -86,31 +85,31 @@ class Login extends StatelessWidget{
                 ),
               ),
               Container(
-                  margin: const EdgeInsets.only(top: 60, left: 25),
-                  child:Row(
+                margin: const EdgeInsets.only(top: 60, left: 25),
+                child:Row(
                   children: [
-                  Padding(
-                    padding: EdgeInsets.all(10.0), // <-- Wrapped in Expanded.
-                    child: Text("Login As", style: TextStyle(color: Colors.black,fontSize: 18, fontWeight: FontWeight.normal),
+                    Padding(
+                      padding: EdgeInsets.all(10.0), // <-- Wrapped in Expanded.
+                      child: Text("login As", style: TextStyle(color: Colors.black,fontSize: 18, fontWeight: FontWeight.normal),
+                      ),
                     ),
-                  ),
-                  GestureDetector(
-                        onTap: () {
+                    GestureDetector(
+                      onTap: () {
                         Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUp()),
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
                         );
-                        },
-                     child: Text("User,", style: TextStyle(color: Colors.red,fontSize: 18, fontWeight: FontWeight.bold),),
+                      },
+                      child: Text("Admin,", style: TextStyle(color: Colors.red,fontSize: 18, fontWeight: FontWeight.bold),),
                     ),
                   ],
                 ),
-                ),
-                Padding(
+              ),
+              Padding(
                 padding: EdgeInsets.all(30.0),
                 child: Column(
-                      children: <Widget>[
-                      Container(
+                  children: <Widget>[
+                    Container(
                       padding: EdgeInsets.all(0),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -181,11 +180,11 @@ class Login extends StatelessWidget{
                     SizedBox(height: 60,),
                     GestureDetector(
                       onTap: () {
-                         Navigator.push(
-                           context,
-                           MaterialPageRoute(builder: (context) => DashBoard()),
-                           );
-                       },
+                        //   Navigator.push(
+                        //   //   context,
+                        //   //  // MaterialPageRoute(builder: (context) => MyHomePage()),
+                        //   // );
+                      },
                       child:Container(
                         height: 50,
                         decoration: BoxDecoration(
@@ -202,32 +201,32 @@ class Login extends StatelessWidget{
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 40,),
                     Container(
                       padding: EdgeInsets.only(left: 0),
                       height: 48.0,
 
                       child:Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(// <-- Wrapped in Expanded.
-                      child: Text("If you are an Admin:", style: TextStyle(color: Colors.black,fontSize: 14, fontWeight: FontWeight.normal),),
+                        children: [
+                          Expanded(// <-- Wrapped in Expanded.
+                            child: Text("If you are an User:", style: TextStyle(color: Colors.black,fontSize: 14, fontWeight: FontWeight.normal),),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Login() ),
+                              );
+                             },
+                            child: Text("Login Here:", style: TextStyle(color: Colors.red,fontSize: 15, fontWeight: FontWeight.bold),),
+                          ),
+                        ],
                       ),
-                     GestureDetector(
-                      onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => AdminLogin()),
-                          );
-                      },
-                      child: Text("Login Here:", style: TextStyle(color: Colors.red,fontSize: 15, fontWeight: FontWeight.bold),),
-                      ),
-                      ],
-                      ),
-                       ),
-                      ],
-                     ),
                     ),
+                  ],
+                ),
+              ),
               SizedBox(height: 0,),
               Container(
                 margin: const EdgeInsets.only(left: 54, right: 20.0,top:0),
@@ -250,10 +249,10 @@ class Login extends StatelessWidget{
                   ],
                 ),
               ),
-                  ],
-                ),
-              ),
+            ],
           ),
+        ),
+      ),
     );
   }
 }
